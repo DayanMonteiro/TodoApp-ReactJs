@@ -5,7 +5,10 @@ export default props => (
     <If test={!props.hide}>
         <button className={'btn btn-'+ props.style} 
             onClick={props.onClick}>
-            <i className={'fa fa-'+ props.icon}></i>
+            <i className="fa fa-plus" aria-hidden="true"></i>
+   
         </button>
     </If>
 )
+
+//   <i className={'fa fa-'+ props.icon}></i>
