@@ -18,6 +18,9 @@ export default props => (
                 <IconButton style='info' icon='fa-search'
                     onClick={props.handleSearch}>
                 </IconButton>
+                <IconButton style='default' icon='fa-times'
+                    onClick={props.handleClear}>
+                </IconButton>
         </Grid>
     </div>
 )
