@@ -9,9 +9,14 @@ export default props => {
             <tr key={todo._id}>
                 <td>{todo.description}</td>
                 <td>
+                    <IconButton style='success' icon='fa-check'
+                        onClick={() => props.handleMarkAsDone(todo)}>
+                    </IconButton>
+                    <IconButton style='warning' icon='fa-undo'
+                        onClick={() => props.handleMarkAsPending(todo)}>
+                    </IconButton>
                     <IconButton style='danger' icon="fa-trash"
-                        onClick={() => props.handleRemove(todo)}>
-                            
+                        onClick={() => props.handleRemove(todo)}>         
                     </IconButton>
                 </td>
             </tr>         
