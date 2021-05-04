@@ -9,7 +9,7 @@ export default props => {
             <tr key={todo._id}>
                 <td>{todo.description}</td>
                 <td>
-                    <IconButton style='danger' icon="fa fa-trash-o"
+                    <IconButton style='danger' icon="fa-trash"
                         onClick={() => props.handleRemove(todo)}>
                             
                     </IconButton>
