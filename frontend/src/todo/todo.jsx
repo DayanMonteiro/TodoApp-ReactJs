@@ -18,14 +18,13 @@ export default class Todo extends Component {
         this.handleAdd = this.handleAdd.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
 
+        this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
+        this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
         this.refresh()
     }
 
-    handleRemove(todo) {
-        axios.delete(`${URL}/${todo._id}`)
-            .then(resp => this.refresh())
-    }
+   
 
     
     refresh(description = '') {
@@ -48,6 +47,21 @@ export default class Todo extends Component {
         const description = this.state.description
         axios.post(URL, { description })
             .then(resp => this.refresh())
+    }
+
+    handleRemove(todo) {
+        axios.delete(`${URL}/${todo._id}`)
+            .then(resp => this.refresh())
+    }
+
+    handleMarkAsDone(todo) {
+        axios.put(`${URL}/${todo._id}`, { ...todo, done: true})
+        .then(resp => this.refresh())
+    }
+
+    handleMarkAsPending(todo) {
+        axios.put(`${URL}/${todo._id}`, { ...todo, done: false})
+        .then(resp => this.refresh())
     }
 
     render() {
