@@ -22,6 +22,7 @@ export default class Todo extends Component {
         this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
         this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
+        
         this.refresh()
     }
     
@@ -38,7 +39,7 @@ export default class Todo extends Component {
     }
 
     handleChange(e) {
-        this.setState({...this.state, description: e.target.value})
+        this.setState({ ...this.state, description: e.target.value })
     }
 
     handleAdd() {
